@@ -25,7 +25,7 @@ namespace MyWcfSerLib.Service
         public void ReceiveImg(System.IO.Stream stream)
         {
             Debug.WriteLine(WebOperationContext.Current.IncomingRequest.ContentType);
-            System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(7000);
             string runDir = System.Environment.CurrentDirectory;
             string imgFilePath = System.IO.Path.Combine(runDir, "ReceiveImg.jpg");
             Image bmp = Bitmap.FromStream(stream);
