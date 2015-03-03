@@ -20,11 +20,12 @@ namespace MyWcfSerLib.Service
             WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";
             return fs;
         }
+
         [WebInvoke(Method = "*", UriTemplate = "ReceiveImg")]
         public void ReceiveImg(System.IO.Stream stream)
         {
             Debug.WriteLine(WebOperationContext.Current.IncomingRequest.ContentType);
-            System.Threading.Thread.Sleep(3000);
+            System.Threading.Thread.Sleep(5000);
             string runDir = System.Environment.CurrentDirectory;
             string imgFilePath = System.IO.Path.Combine(runDir, "ReceiveImg.jpg");
             Image bmp = Bitmap.FromStream(stream);
